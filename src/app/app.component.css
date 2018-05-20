@@ -1,0 +1,17 @@
+app-settings {
+  color: #fff;
+  display: block;
+  width: 200px;
+  height: 100vh;
+  float: left;
+  background: #000;
+  background: linear-gradient(#1f282f, #000);
+}
+app-visualisation {
+  display: block;
+  width: calc(100vw - (100vw - 100%) - 200px);
+  height: 100vh;
+  float: left;
+  background: #ccc;
+  background: linear-gradient(#ededed, #ccc);
+}

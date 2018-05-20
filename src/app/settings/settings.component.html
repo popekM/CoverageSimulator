@@ -1,0 +1,20 @@
+<br><label for="powerSelected">
+  TX Power
+</label>
+<select [(ngModel)]="powerSelected" name="powerSelected">
+		<option *ngFor="let el of TXPowerList" [ngValue]="el"> {{ el.displayText + ' ' + el.value + el.unit }} </option>
+</select>
+
+<label for="radioSelceted">
+  Radio
+</label>
+<label class="container" *ngFor="let el of radioList">
+  {{ el.value + ' ' + el.unit }}
+	<input type="radio" [(ngModel)]="radioSelceted" name="radioSelceted" [value]="el">
+  <span class="checkmark"></span>
+</label>
+
+<hr>
+
+<button class="button" [class.disabled]="powerSelected === powerSelectedCopy && radioSelceted === radioSelcetedCopy" (click)="save()">SAVE</button>
+<p class="link" [class.disabled1]="powerSelected === powerSelectedCopy && radioSelceted === radioSelcetedCopy" (click)="cancel()">CANCEL</p>

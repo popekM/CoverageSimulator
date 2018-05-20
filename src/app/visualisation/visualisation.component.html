@@ -1,0 +1,14 @@
+<svg [style.width.px]="windowWidth" [style.height.px]="windowHeight">
+  <circle [attr.cx]="x" [attr.cy]="y" [attr.r]="radius" fill="rgba(68, 137, 244, 0.4)" />
+  <image id="draggable" xlink:href="./assets/accesspoint.png" [attr.x]="x-offset" [attr.y]="y-offset" [attr.height]="size" [attr.width]="size"
+    (mousedown)="startDrag($event)"
+    (mousemove)="drag($event)"
+    (mouseup)="endDrag()"
+    (mouseleave)="endDrag()"
+  />
+  <circle *ngFor="let i of receivers; let j = index" [attr.cx]="i[0]" [attr.cy]="i[1]" r="5" [attr.fill]="inRange[j] ? '#23b77d' : '#fc3516'" />
+  <line [attr.x1]="windowWidth - 131" [attr.y1]="windowHeight - 20" [attr.x2]="windowWidth - 31" [attr.y2]="windowHeight - 20" style="stroke:rgb(165,165,165);stroke-width:1" />
+  <line [attr.x1]="windowWidth - 130" [attr.y1]="windowHeight - 35" [attr.x2]="windowWidth - 130" [attr.y2]="windowHeight - 20" style="stroke:rgb(165,165,165);stroke-width:1" />
+  <line [attr.x1]="windowWidth - 31" [attr.y1]="windowHeight - 35" [attr.x2]="windowWidth - 31" [attr.y2]="windowHeight - 20" style="stroke:rgb(165,165,165);stroke-width:1" />
+  <text [attr.x]="windowWidth - 102" [attr.y]="windowHeight - 23" fill="rgb(165,165,165)"> {{ scaleValue }}</text>
+</svg>
